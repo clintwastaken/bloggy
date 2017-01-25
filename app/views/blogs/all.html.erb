@@ -1,0 +1,29 @@
+<h1>All Posts!</h1>
+
+  <% @blog.each do |blog| %>
+    <li><%= blog.title %></li>
+  <% end %>
+</ul>
+-->
+
+<table>
+  <thead>
+  <tr>
+    <th>Title</th>
+    <th>Body</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @blog.each do |i| %>
+      <tr>
+        <td>
+          <!-- <%= link_to i.title, "/blogs/#{i.id}" %> -->
+          <a href="/blogs/<%= i.id %>">
+            <%= i.title %>
+          </a>
+        </td>
+        <td><%= i.body %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>

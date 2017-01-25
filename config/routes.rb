@@ -1,4 +1,17 @@
 Rails.application.routes.draw do
+  devise_for :users
+
+  get '/blogs/create' => 'blogs#create'
+  post '/blogs/create' => 'blogs#create'
+
+  get '/blogs/new' => 'blogs#new'
+
+  get '/blogs/:id' => 'blogs#show'
+
+  get '/' => 'blogs#all'
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
