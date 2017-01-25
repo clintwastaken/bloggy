@@ -13,7 +13,21 @@ class BlogsController < ApplicationController
         body:        params[:contents]
     )
 
-    redirect_to '/'
+    redirect_to "/blogs/#{@blog.id}"
+  end
+
+  def edit
+    @blog = Blog.find params[:id]
+  end
+
+  def update
+    @blog = Blog.find params[:id]
+    @blog.update(
+        title:       params[:label],
+        body:        params[:contents]
+    )
+
+    redirect_to "/blogs/#{@blog.id}"
   end
 
   def all

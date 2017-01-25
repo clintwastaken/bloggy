@@ -2,13 +2,20 @@ Rails.application.routes.draw do
   devise_for :users
 
   get '/blogs/create' => 'blogs#create'
-  post '/blogs/create' => 'blogs#create'
+
+  # post '/blogs/create' => 'blogs#create'
 
   get '/blogs/new' => 'blogs#new'
 
+  post '/blogs/new' => 'blogs#create'
+
   get '/blogs/:id' => 'blogs#show'
 
-  get '/' => 'blogs#all'
+  get '/blogs/:id/edit' => 'blogs#edit'
+
+  post '/blogs/:id/edit' => 'blogs#update'
+
+  get '/blogs' => 'blogs#all'
 
 
 

@@ -1,3 +1,25 @@
 <h2><%= @blog.title %></h2>
 
 <p><%= @blog.body %></p>
+
+
+
+
+<table border = "0">
+  <tr>
+
+    <td>
+<form action="/blogs/<%= @blog.id %>/edit">
+  <input type="submit" value="Edit" />
+</form>
+    </td>
+
+
+    <td>
+<form action="/blogs">
+  <input type="submit" value="Home" />
+</form>
+    </td>
+
+  </tr>
+</table>

@@ -1,0 +1,14 @@
+<h2><%= @blog.title %></h2>
+
+<p><%= @blog.body %></p>
+
+
+<%= form_tag "/blogs/#{@blog.id}/edit" do %>
+    <p>Title</p>
+    <input type="text" name="label" value="<%= @blog.title %>">
+
+    <p>Body</p>
+    <input type="text" name="contents" value="<%= @blog.body %>">
+
+    <button>Edit Blog Post</button>
+<% end %>

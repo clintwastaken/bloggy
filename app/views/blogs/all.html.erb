@@ -1,10 +1,5 @@
 <h1>All Posts!</h1>
 
-  <% @blog.each do |blog| %>
-    <li><%= blog.title %></li>
-  <% end %>
-</ul>
--->
 
 <table>
   <thead>
@@ -27,3 +22,10 @@
   <% end %>
   </tbody>
 </table>
+
+
+<!--<a href = "/blogs/new">Create a new blog post</a>-->
+
+<form action="/blogs/new">
+  <input type="submit" value="New Post" />
+</form>
