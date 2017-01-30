@@ -21,5 +21,22 @@
 </form>
     </td>
 
+
+    <td>
+<% if current_user.has_favorited?(@blog) %>
+      <%= form_tag "/blogs/#{@blog.id}/favorite", method: :delete do %>
+          <button>Unfavorite</button>
+      <% end %>
+<% else %>
+      <%= form_tag "/blogs/#{@blog.id}/favorite" do %>
+          <button>Favorite</button>
+      <% end %>
+<% end %>
+    </td>
+
+
+
   </tr>
 </table>
+
+

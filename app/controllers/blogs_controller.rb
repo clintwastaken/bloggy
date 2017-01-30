@@ -37,6 +37,24 @@ class BlogsController < ApplicationController
     end
   end
 
+  def favorite
+    Favorite.where(
+                user_id: current_user.id,
+                blog_id: params[:id]
+    ).first_or_create
+
+    redirect_to "/blogs/#{params[:id]}/"
+  end
+
+  def unfavorite
+    Favorite.where(
+        user_id: current_user.id,
+        blog_id: params[:id]
+    ).delete_all
+
+    redirect_to "/blogs/#{params[:id]}/"
+  end
+
 end
 
 

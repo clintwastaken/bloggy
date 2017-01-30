@@ -1,21 +1,30 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  get '/blogs/create' => 'blogs#create'
-
-  # post '/blogs/create' => 'blogs#create'
-
+  # get and post new blog entries
   get '/blogs/new' => 'blogs#new'
-
   post '/blogs/new' => 'blogs#create'
 
+  # get individual blog entries
   get '/blogs/:id' => 'blogs#show'
 
-  get '/blogs/:id/edit' => 'blogs#edit'
+  # main page
+  get '/blogs' => 'blogs#all'
 
+  # favorite blog entries
+  # get '/' => 'blogs#new'
+
+  post '/blogs/:id/favorite' => 'blogs#favorite'
+  delete '/blogs/:id/favorite' => 'blogs#unfavorite'
+
+  # edit blog entries
+  get '/blogs/:id/edit' => 'blogs#edit'
   post '/blogs/:id/edit' => 'blogs#update'
 
-  get '/blogs' => 'blogs#all'
+  # wtf is this?
+  get '/blogs/create' => 'blogs#create'
+
+
 
 
 
